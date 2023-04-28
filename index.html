@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Example</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="todos-container">
+        <div>
+          <h1 id="heading">OPERATIONS</h1> 
+        </div>
+        <div class="operation_container">
+          <div draggable="true" class="todo" id="ADD">ADD</div>
+          <div draggable="true" class="todo" id="SUBTRACT">SUBTRACT</div>
+          <div draggable="true" class="todo" id="MULTIPLY">MULTIPLY</div>
+          <div draggable="true" class="todo" id="DIVIDE">DIVIDE</div>
+        </div>
+        <div>
+          <button onclick="reset_op()" class="reset-btn">RESET</button>
+        </div>
+      </div>
+      <div class="done-container">
+        <h1 id="heading">CALCULATE</h1> 
+        <input type="number" placeholder="Number:" class="input">
+      </div>
+    </div>
+
+    <div class="output-container">
+        <button onclick="eval_exprn()" class="btn">OUTPUT : </button>
+        <p class="op"></p>
+    </div>
+    <script src="operation.js"></script>
+  </body>
+</html>
