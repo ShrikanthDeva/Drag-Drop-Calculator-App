@@ -11,7 +11,8 @@ const handleDrop = (e) => {
   const id = e.dataTransfer.getData("text");
   console.log(id)
   let $draggedElement = document.querySelector(`#${id}`);
-  // console.log($draggedElement)
+  console.log($draggedElement)
+  $draggedElement.setAttribute("class","todo2")
   // $draggedElement = $draggedElement[0]
   $draggedElement.style.backgroundColor = "#ff7979";
 

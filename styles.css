@@ -31,19 +31,21 @@
 .wrapper {
   display: flex;
   width: 1200px;
-  height: 80vh;
+  height: 70vh;
   margin: 2rem 3rem;
-  border: 2px solid #bdc3c7;
+  border: 2px solid black;
   justify-content:  center;
+  border-radius: 20px;
 
 }
 .todos-container {
   width: 50%;
-  background-color: #ecf0f1;
+  background-color: #d7dcdd;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  border-radius: 20px;
 }
 .todo {
   width: 200px;
@@ -51,7 +53,17 @@
   text-align: center;
   color: #fff;
   background-color: #e74c3c;
-  margin: 10px auto;
+  margin: 25px auto;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+.todo2 {
+  width: 200px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  background-color: #e74c3c;
+  margin: 3px auto;
   padding: 10px 0;
   border-radius: 10px;
 }
@@ -63,14 +75,17 @@
   justify-content: flex-start;
   align-items: center;
   font-weight: bold;
+  border-radius: 20px;
 }
 .output-container
 {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  /* border: 3px solid tomato; */
-  /* align-items: center; */
+  justify-content: space-between;
+  border: 3px solid #4CAF50;
+  align-items: center;
+  width: 250px;
+  margin-left: 500px;
 }
 .btn {
   background-color: #4CAF50; /* Green */
@@ -81,13 +96,14 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  cursor:pointer
+  cursor:pointer;
+  border-radius: 0px 10px 10px 0px;
 }
 .op{
   font-size: 25px;
   font-weight: 2;
   padding: 9px;
-  border: 2px solid #4CAF50;
+  /* border: 2px solid #4CAF50; */
   height: 48px;
   width: 100px;
   text-align: center;
@@ -110,5 +126,20 @@
   display: inline-block;
   font-size: 16px;
   cursor:pointer;
-  margin-top: 50px;
+}
+.head
+{
+  font-size: 35px;
+  font-weight: bold;
+  margin-left: 300px;
+  width: 700px;
+  height: 50px;
+  text-align: center;
+  background-color: rgba(34, 30, 30, 0.849);
+  color:white;
+  border-radius: 0px 0px 30px 30px;
+}
+.operation_container
+{
+  height: 300px;
 }
