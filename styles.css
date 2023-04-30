@@ -20,14 +20,6 @@
   align-items: center;
 }
 
-#draggable {
-  width: 200px;
-  background-color: #f39c12;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-}
-
 .wrapper {
   display: flex;
   width: 1200px;
@@ -35,7 +27,6 @@
   margin: 2rem 3rem;
   border: 2px solid black;
   justify-content:  center;
-  border-radius: 20px;
 
 }
 .todos-container {
@@ -45,7 +36,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 0px 20px 20px 0px;
 }
 .todo {
   width: 200px;
@@ -75,7 +66,10 @@
   justify-content: flex-start;
   align-items: center;
   font-weight: bold;
-  border-radius: 20px;
+  /* border-radius: 20px; */
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-right: 1px;
 }
 .output-container
 {
@@ -117,7 +111,7 @@
   border-radius: 5px;
 }
 .reset-btn {
-  background-color: #2d77ff; /* Green */
+  background-color: #2d77ff;
   border: none;
   color: white;
   padding: 15px 32px;

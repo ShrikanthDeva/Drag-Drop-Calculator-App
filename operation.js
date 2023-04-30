@@ -6,15 +6,19 @@ const first = true
 const operation_dict = {'ADD':'+','SUBTRACT':'-','MULTIPLY':'*','DIVIDE':'/'}
 let operation = ""
 let op_num = 0
+let oper = 1
 
 const handleDrop = (e) => {
   const id = e.dataTransfer.getData("text");
   console.log(id)
-  let $draggedElement = document.querySelector(`#${id}`);
+  let $draggedElement = document.querySelector(`#${id}`).cloneNode(true);
+  $draggedElement.id = oper;
+  oper += 1
+  
   console.log($draggedElement)
   $draggedElement.setAttribute("class","todo2")
   // $draggedElement = $draggedElement[0]
-  $draggedElement.style.backgroundColor = "#ff7979";
+  document.querySelector(`#${id}`).style.backgroundColor = "#e74c3c";
 
 
 
@@ -57,27 +61,46 @@ todos.forEach(($todo) => {
 $doneContainer.addEventListener("drop", handleDrop);
 $doneContainer.addEventListener("dragover", handleDragover);
 
-
-function eval_exprn() {
+function isEmpty() {
   const inputs = document.querySelectorAll(".input")
-  let exp = ''
-  let val = 0
   for (let i = 0; i < inputs.length; i++) {
-    // console.log(inputs[i].value) 
-    exp = exp.concat(inputs[i].value)
-    if (val) exp = exp + ')'
-    val =  1
-    if (i < inputs.length -1){
-      exp = exp.concat(operation[i])
-      exp = '(' + exp
+    if ( inputs[i].value == null || inputs[i].value == "")
+    {
+      alert("Please Fill all the fields")
+      return false
     }
   }
-  console.log(exp)
-  console.log(eval(exp))
+  return true
+}
 
-  const op = document.querySelector(".op")
-  console.log(op)
-  op.innerText = eval(exp)
+
+function eval_exprn() {
+
+  if (isEmpty())
+  {
+
+    const inputs = document.querySelectorAll(".input")
+    console.log(inputs)
+    let exp = ''
+    let val = 0
+    for (let i = 0; i < inputs.length; i++) {
+      // console.log(inputs[i].value) 
+      exp = exp.concat(inputs[i].value)
+      if (val) exp = exp + ')'
+      val =  1
+      if (i < inputs.length -1){
+        exp = exp.concat(operation[i])
+        exp = '(' + exp
+      }
+    }
+    console.log(exp)
+    console.log(eval(exp))
+  
+    const op = document.querySelector(".op")
+    console.log(op)
+    op.innerText = eval(exp)
+  }
+
 
 }
 
